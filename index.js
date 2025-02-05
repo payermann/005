@@ -82,7 +82,7 @@ while (true) {
     console.log(`Vielen Dank für deinen Einkauf, ${name}!`);
     if (sum > 1000) {
       console.log(
-        `Rabatt-Aktion!: Sie erhalten 10% Rabatt!\n\
+        `Rabatt-Aktion!: 10% Rabatt!\n\
         Neuer Gesamtpreis nach Rabatt: ${Math.ceil(sum * 0.9 * 100) / 100}€`
       );
     }
