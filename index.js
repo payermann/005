@@ -3,7 +3,7 @@ import { question, questionInt, keyInSelect } from "readline-sync";
 const products = {
   Laptop: 999.99,
   Smartphone: 499.99,
-  Kopfhörer: 99.99,
+  Kopfhoerer: 99.99,
   Monitor: 199.99,
   Tastatur: 49.99,
   Maus: 29.99,
@@ -18,7 +18,7 @@ const products_names = Object.keys(products);
 let products_names_with_prices = [];
 for (const product_name of products_names) {
   products_names_with_prices.push(
-    `${product_name} - ${products[product_name]}€`
+    `${product_name} - ${products[product_name]} EUR`
   );
 }
 const products_length = products_names.length;
@@ -30,7 +30,7 @@ console.log(`Hallo ${name}! Hier sind unsere Produkte:`);
 while (true) {
   const product = keyInSelect(
     products_names_with_prices,
-    "Welches Produkt du kaufen?"
+    "Welches Produkt kaufst du?"
   );
   if (product === -1) {
     break;
@@ -41,7 +41,7 @@ while (true) {
         products[products_names[product]]
       }€ ausgewählt.`
     );
-    const amount = questionInt("Wie viele möchtest du kaufen? ");
+    const amount = questionInt("Wie viele kaufst du? ");
     sum =
       Math.ceil((sum + products[products_names[product]] * amount) * 100) / 100;
     console.log(
@@ -77,10 +77,7 @@ while (true) {
   console.table(products_bought);
   console.log(`Gesamtsumme: ${sum}€`);
 
-  const buy_more = keyInSelect(
-    ["Ja", "Nein"],
-    "Möchtest du noch mehr Produkte kaufen?"
-  );
+  const buy_more = keyInSelect(["Ja", "Nein"], "Weitere Produkte kaufen?");
   if (buy_more === 1) {
     console.log(`Vielen Dank für deinen Einkauf, ${name}!`);
     if (sum > 1000) {
